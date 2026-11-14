@@ -223,27 +223,20 @@
         <div class="preview-card">
             <h3>My Portfolio</h3>
             <p>Shaxsiy portfolio saytim.</p>
-            <button onclick="openProjectPreview('https://example.com')">
+            <button onclick="openProjectPreview('https://muhammadbirov020-eng.github.io/portfol-o/')">
                 Preview
             </button>
         </div>
 
         <div class="preview-card">
             <h3>My Website</h3>
-            <p>Web loyiha namunasi.</p>
-            <button onclick="openProjectPreview('https://example.org')">
-                Preview
+            <p>Yangi web loyiha tez orada.</p>
+            <button type="button" disabled>
+                Tez orada
             </button>
         </div>
     </div>
 </section>
-
-<div id="previewModal" class="preview-modal">
-    <div class="preview-content">
-        <button onclick="closeProjectPreview()">✕ Yopish</button>
-        <iframe id="previewFrame" title="Project preview"></iframe>
-    </div>
-</div>
     <!-- MY JOURNEY -->
     <section class="journey reveal" id="journey">
         <h2>Mening yo‘lim</h2>
@@ -1198,35 +1191,21 @@ if (heroCard && window.matchMedia("(pointer: fine)").matches) {
     });
 }
 
-    // PROJECT PREVIEW
-    window.openProjectPreview = function(url) {
-        const frame = get("previewFrame");
-        const modal = get("previewModal");
+   // PROJECT PREVIEW
+window.openProjectPreview = function(url) {
+    try {
+        const safeUrl = new URL(url);
 
-        if (!frame || !modal) return;
-
-        try {
-            const safeUrl = new URL(url, window.location.href);
-
-            if (!["https:", "http:"].includes(safeUrl.protocol)) {
-                showNotification("Noto‘g‘ri loyiha havolasi.");
-                return;
-            }
-
-            frame.src = safeUrl.href;
-            modal.classList.add("active");
-        } catch (error) {
-            showNotification("Havola noto‘g‘ri.");
+        if (safeUrl.protocol !== "https:") {
+            showNotification("Noto‘g‘ri loyiha havolasi.");
+            return;
         }
-    };
 
-    window.closeProjectPreview = function() {
-        const frame = get("previewFrame");
-        const modal = get("previewModal");
-
-        if (modal) modal.classList.remove("active");
-        if (frame) frame.src = "about:blank";
-    };
+        window.open(safeUrl.href, "_blank", "noopener,noreferrer");
+    } catch (error) {
+        showNotification("Havola noto‘g‘ri.");
+    }
+};
 
     // LIVE CODE EDITOR
     const runCode = get("runCode");
@@ -1266,7 +1245,7 @@ if (heroCard && window.matchMedia("(pointer: fine)").matches) {
         if (event.key === "Escape") {
             if (searchOverlay) searchOverlay.classList.remove("open");
             closeProjectModal();
-            window.closeProjectPreview();
+            
         }
     });
 
