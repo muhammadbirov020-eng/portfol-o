@@ -1003,7 +1003,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const AI_API_URL =
         "https://muhammadyusuf-ai.muhammadbirov020.workers.dev";
 
+    // SUHBAT TARIXINI BRAUZER SEANSIDA SAQLASH
     let chatHistory = [];
+
+    try {
+        const savedHistory = JSON.parse(
+            sessionStorage.getItem("portfolioChatHistory") || "[]"
+        );
+
+        if (Array.isArray(savedHistory)) {
+            chatHistory = savedHistory.filter(item =>
+                item &&
+                ["user", "assistant"].includes(item.role) &&
+                typeof item.content === "string"
+            ).slice(-10);
+        }
+    } catch (error) {
+        console.warn("Chat tarixi yuklanmadi:", error);
+        chatHistory = [];
+    }
+
+    function saveChatHistory() {
+        try {
+            sessionStorage.setItem(
+                "portfolioChatHistory",
+                JSON.stringify(chatHistory.slice(-10))
+            );
+        } catch (error) {
+            console.warn("Chat tarixi saqlanmadi:", error);
+        }
+    }
 
     function addMessage(text, type) {
         const message = document.createElement("div");
@@ -1013,6 +1042,11 @@ document.addEventListener("DOMContentLoaded", () => {
         chatMessages.appendChild(message);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
+
+    // Oldingi suhbatni oynaga qayta chiqarish
+    chatHistory.forEach(item => {
+        addMessage(item.content, item.role === "user" ? "user" : "bot");
+    });
 
     chatButton.addEventListener("click", () => {
         chatWindow.classList.toggle("active");
@@ -1033,6 +1067,7 @@ document.addEventListener("DOMContentLoaded", () => {
             role: "user",
             content: message
         });
+        saveChatHistory();
 
         chatInput.value = "";
         chatSend.disabled = true;
@@ -1063,6 +1098,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 role: "assistant",
                 content: answer
             });
+            chatHistory = chatHistory.slice(-10);
+            saveChatHistory();
 
         } catch (error) {
             console.error("AI Chatbot:", error);
@@ -1073,6 +1110,7 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
             chatHistory.pop();
+            saveChatHistory();
 
         } finally {
             chatTyping.hidden = true;
