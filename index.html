@@ -1193,17 +1193,36 @@ if (heroCard && window.matchMedia("(pointer: fine)").matches) {
 })();
 
   </script>
-<div class="chatbot">
-    <button id="chatButton">💬</button>
+<!-- AI CHATBOT -->
+<div class="ai-chatbot">
+    <button id="chatButton" class="ai-chat-toggle">✦</button>
 
-    <div class="chat-window" id="chatWindow">
-        <h3>AI Assistant 🤖</h3>
-        <div id="chatMessages">
-            <p>Salom! Sizga qanday yordam beraman?</p>
+    <div class="ai-chat-window" id="chatWindow">
+        <div class="ai-chat-header">
+            <div class="ai-avatar">✦</div>
+            <div>
+                <h3>Muhammadyusuf AI</h3>
+                <p>🟢 AI yordamchi</p>
+            </div>
+            <button id="chatClose">×</button>
         </div>
 
-        <input type="text" id="chatInput" placeholder="Xabar yozing...">
-        <button onclick="sendMessage()">Yuborish</button>
+        <div class="ai-chat-messages" id="chatMessages">
+            <div class="ai-message bot-message">
+                Salom! Men Muhammadyusuf AI yordamchisiman. 👋
+                Sizga qanday yordam bera olaman?
+            </div>
+        </div>
+
+        <div class="ai-typing" id="chatTyping" hidden>
+            AI javob yozmoqda...
+        </div>
+
+        <div class="ai-chat-input">
+            <input id="chatInput" type="text"
+                   placeholder="Xabar yozing..." maxlength="2000">
+            <button id="chatSend">➤</button>
+        </div>
     </div>
 </div>
 </body>
