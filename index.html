@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muhammadyusufning shaxsiy portfolio sayti">
+    <title>Muhammadyusuf | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+<div id="intro">
+    <h1>MUHAMMADYUSUF</h1>
+    <p>WELCOME TO MY PORTFOLIO</p>
+</div>
+     <canvas id="particles" aria-hidden="true"></canvas>
+    <div id="scrollProgress" aria-hidden="true"></div>
+    <div id="neonCursor" aria-hidden="true"></div>
+<div id="interactive3dBackground">
+    <div class="glow glow-one"></div>
+    <div class="glow glow-two"></div>
+    <div class="glow glow-three"></div>
+</div>
+    <!-- LOADING -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+        <h2>MUHAMMADYUSUF</h2>
+        <p>Loading Portfolio...</p>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav>
+        <h2>MY PORTFOLIO</h2>
+
+        <div class="nav-buttons">
+            <button id="themeBtn" class="theme-btn" type="button" aria-label="Rang rejimini almashtirish">☀️</button>
+            <button id="languageBtn" class="extra-btn" type="button">UZ</button>
+            <button id="searchBtn" class="extra-btn" type="button" aria-label="Saytdan qidirish">⌕</button>
+            <button class="menu-btn" id="menuBtn" type="button" aria-label="Menyuni ochish">☰</button>
+        </div>
+
+        <ul id="navLinks">
+            <li><a href="#home" data-uz="Bosh sahifa" data-en="Home">Bosh sahifa</a></li>
+            <li><a href="#about" data-uz="Men haqimda" data-en="About me">Men haqimda</a></li>
+            <li><a href="#skills" data-uz="Ko‘nikmalar" data-en="Skills">Ko‘nikmalar</a></li>
+            <li><a href="#projects" data-uz="Loyihalar" data-en="Projects">Loyihalar</a></li>
+            <li><a href="#contact" data-uz="Aloqa" data-en="Contact">Aloqa</a></li>
+        </ul>
+    </nav>
+
+    <!-- CLOCK -->
+    <div class="live-clock" id="clock">00:00:00</div>
+
+    <!-- HOME -->
+    <section class="hero" id="home">
+        <img src="rasm.jpg" alt="Muhammadyusufning rasmi" class="profile-img">
+        <h1>Salom, men <span>Muhammadyusuf</span></h1>
+        <p class="typing">
+            <span id="typingText"></span><span class="typing-cursor">|</span>
+        </p>
+        <a href="#projects" class="btn">Loyihalarimni ko‘rish</a>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about reveal" id="about">
+        <h2>Men haqimda</h2>
+        <p>
+            Men dasturlashga qiziqaman.
+            HTML, CSS va JavaScript o‘rganmoqdaman.
+            Maqsadim — professional dasturchi bo‘lish
+            va ajoyib loyihalar yaratish.
+        </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills reveal" id="skills">
+        <h2>Mening ko‘nikmalarim</h2>
+        <p class="skills-description">Men o‘rganayotgan dasturlash texnologiyalari</p>
+
+        <div class="skill">
+            <div class="skill-info"><span>HTML</span><span>90%</span></div>
+            <div class="skill-bar"><div class="skill-progress" style="--progress: 90%"></div></div>
+        </div>
+        <div class="skill">
+            <div class="skill-info"><span>CSS</span><span>80%</span></div>
+            <div class="skill-bar"><div class="skill-progress" style="--progress: 80%"></div></div>
+        </div>
+        <div class="skill">
+            <div class="skill-info"><span>JavaScript</span><span>55%</span></div>
+            <div class="skill-bar"><div class="skill-progress" style="--progress: 55%"></div></div>
+        </div>
+        <div class="skill">
+            <div class="skill-info"><span>Python</span><span>40%</span></div>
+            <div class="skill-bar"><div class="skill-progress" style="--progress: 40%"></div></div>
+        </div>
+    </section>
+<section id="skills-dashboard" class="reveal">
+    <h2>My Skills Dashboard</h2>
+
+    <div class="dashboard-grid">
+        <div class="dashboard-card">
+            <h3>HTML</h3>
+            <h2>90%</h2>
+            <div class="dashboard-bar">
+                <div style="--level:90%"></div>
+            </div>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>CSS</h3>
+            <h2>80%</h2>
+            <div class="dashboard-bar">
+                <div style="--level:80%"></div>
+            </div>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>JavaScript</h3>
+            <h2>60%</h2>
+            <div class="dashboard-bar">
+                <div style="--level:60%"></div>
+            </div>
+        </div>
+
+        <div class="dashboard-card">
+            <h3>Python</h3>
+            <h2>40%</h2>
+            <div class="dashboard-bar">
+                <div style="--level:40%"></div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- STATISTICS -->
+    <section class="stats reveal" id="stats">
+        <h2>Mening natijalarim</h2>
+        <div class="stats-container">
+            <div class="stat-card">
+                <h3><span class="counter" data-target="3">0</span>+</h3>
+                <p>Loyihalar</p>
+            </div>
+            <div class="stat-card">
+                <h3><span class="counter" data-target="4">0</span>+</h3>
+                <p>Texnologiyalar</p>
+            </div>
+            <div class="stat-card">
+                <h3><span class="counter" data-target="100">0</span>%</h3>
+                <p>Motivatsiya</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFESSIONAL PROJECTS -->
+    <section class="projects reveal" id="projects">
+        <h2>Mening loyihalarim</h2>
+        <p class="projects-subtitle">Men yaratgan va ustida ishlayotgan loyihalar</p>
+
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all" type="button">Barchasi</button>
+            <button class="filter-btn" data-filter="html" type="button">HTML</button>
+            <button class="filter-btn" data-filter="css" type="button">CSS</button>
+            <button class="filter-btn" data-filter="python" type="button">Python</button>
+        </div>
+
+        <div class="project-grid">
+            <article class="project-card reveal" data-category="python">
+                <div class="project-visual telegram-visual">
+                    <span>✈</span><h3>TELEGRAM BOT</h3>
+                </div>
+                <div class="project-content">
+                    <span class="project-number">01 / PROJECT</span>
+                    <h3>Telegram Video Bot</h3>
+                    <p>YouTube, Instagram va boshqa platformalardan video yuklash uchun Telegram bot.</p>
+                    <div class="project-tags"><span>Python</span><span>Telegram API</span></div>
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <span>↗</span></a>
+                    <div class="project-actions">
+                        <button class="details-btn" type="button">Batafsil</button>
+                        <button class="demo-btn" type="button" data-demo="">Live Demo</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card reveal" data-category="html css">
+                <div class="project-visual web-visual">
+                    <span>〈/〉</span><h3>WEB DESIGN</h3>
+                </div>
+                <div class="project-content">
+                    <span class="project-number">02 / PROJECT</span>
+                    <h3>Portfolio Website</h3>
+                    <p>Zamonaviy dizayn, animatsiyalar va moslashuvchan sahifalarga ega shaxsiy sayt.</p>
+                    <div class="project-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <span>↗</span></a>
+                    <div class="project-actions">
+                        <button class="details-btn" type="button">Batafsil</button>
+                        <button class="demo-btn" type="button" data-demo="">Live Demo</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card reveal" data-category="python">
+                <div class="project-visual python-visual">
+                    <span>Py</span><h3>PYTHON</h3>
+                </div>
+                <div class="project-content">
+                    <span class="project-number">03 / PROJECT</span>
+                    <h3>Python Programs</h3>
+                    <p>Kundalik vazifalarni osonlashtiruvchi kichik dasturlar va avtomatlashtirish.</p>
+                    <div class="project-tags"><span>Python</span><span>Automation</span></div>
+                    <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="project-link">GitHub <span>↗</span></a>
+                    <div class="project-actions">
+                        <button class="details-btn" type="button">Batafsil</button>
+                        <button class="demo-btn" type="button" data-demo="">Live Demo</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="project-preview" class="reveal">
+    <h2>Project Preview</h2>
+
+    <div class="preview-grid">
+        <div class="preview-card">
+            <h3>My Portfolio</h3>
+            <p>Shaxsiy portfolio saytim.</p>
+            <button onclick="openProjectPreview('https://example.com')">
+                Preview
+            </button>
+        </div>
+
+        <div class="preview-card">
+            <h3>My Website</h3>
+            <p>Web loyiha namunasi.</p>
+            <button onclick="openProjectPreview('https://example.org')">
+                Preview
+            </button>
+        </div>
+    </div>
+</section>
+
+<div id="previewModal" class="preview-modal">
+    <div class="preview-content">
+        <button onclick="closeProjectPreview()">✕ Yopish</button>
+        <iframe id="previewFrame" title="Project preview"></iframe>
+    </div>
+</div>
+    <!-- MY JOURNEY -->
+    <section class="journey reveal" id="journey">
+        <h2>Mening yo‘lim</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Dasturlashga ilk qadam</h3>
+                <p>Dasturlash olamiga qiziqishim boshlandi.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>HTML va CSS</h3>
+                <p>Web sahifalar yaratish va ularni bezashni o‘rganyapman.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>JavaScript</h3>
+                <p>Sahifalarga interaktiv imkoniyatlar qo‘shishni o‘rganyapman.</p>
+            </div>
+            <div class="timeline-item">
+                <h3>Kelajakdagi maqsad</h3>
+                <p>Professional dasturchi bo‘lib, foydali loyihalar yaratish.</p>
+            </div>
+        </div>
+    </section>
+<section id="terminal">
+    <h2>Hacker Terminal 💻</h2>
+
+    <div class="terminal-box">
+        <p>Welcome to Muhammadyusuf Terminal</p>
+        <div id="terminalOutput"></div>
+
+        <input
+            type="text"
+            id="terminalInput"
+            placeholder="Buyruq yozing..."
+        >
+    </div>
+</section>
+  <section id="github">
+    <h2>GitHub Activity 🐙</h2>
+
+    <div class="github-card">
+        <h3>My GitHub Profile</h3>
+        <p>My coding journey and projects.</p>
+
+      <a href="https://github.com/muhammadbirov020-eng" target="_blank">
+    Visit My GitHub
+</a>
+    </div>
+</section>
+<!-- TECH STACK -->
+<section class="tech-stack reveal" id="tech-stack">
+    <h2>Texnologiyalar</h2>
+
+    <div class="tech-list">
+        <span>🌐 HTML</span>
+        <span>🎨 CSS</span>
+        <span>⚡ JavaScript</span>
+        <span>🐍 Python</span>
+        <span>🧰 Git</span>
+    </div>
+</section>
+<section id="live-editor" class="reveal">
+    <h2>Live Code Editor</h2>
+
+    <textarea id="codeInput"><h1>Hello World!</h1>
+<p>My Portfolio</p>
+<style>
+body {
+    background: #101b30;
+    color: #00d9ff;
+    text-align: center;
+    font-family: Arial;
+}
+</style></textarea>
+
+    <button id="runCode">▶ Run Code</button>
+
+    <iframe id="codePreview"
+        title="Code output"
+        sandbox="allow-scripts">
+    </iframe>
+</section>
+    <!-- TESTIMONIALS -->
+    <section class="testimonials reveal">
+        <h2>Fikrlar</h2>
+        <div class="testimonial-card">
+            <h3>Kelajakdagi hamkorlarim</h3>
+            <p>Bu bo‘limga loyihalarim haqida haqiqiy mijozlar va hamkorlarning fikrlarini joylashtiraman.</p>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD CV -->
+    <section class="cv-section reveal">
+        <h2>Rezyume</h2>
+        <p>Rezyumemni PDF shaklida yuklab oling.</p>
+        <a href="cv.pdf" download class="btn">📄 CV yuklab olish</a>
+    </section>
+
+    <!-- VISITOR COUNTER -->
+    <div class="visitor-box">
+        <span>👁️ Ushbu brauzerdagi tashriflar:</span>
+        <strong id="visitorCount">0</strong>
+    </div>
+
+    <!-- CONTACT -->
+    <section class="contact reveal" id="contact">
+        <h2>Men bilan bog‘lanish</h2>
+        <p>Menga xabar yuboring!</p>
+
+        <form class="contact-form" id="contactForm">
+            <input type="text" name="from_name" placeholder="Ismingiz" required>
+            <input type="email" name="reply_to" placeholder="Email manzilingiz" required>
+            <textarea name="message" placeholder="Xabaringiz..." rows="5" required></textarea>
+            <button type="submit" class="btn" id="sendBtn">Xabar yuborish</button>
+        </form>
+
+        <p id="formMessage" role="status"></p>
+
+        <div class="socials">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://t.me/" target="_blank" rel="noopener noreferrer">Telegram</a>
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Muhammadyusuf. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <!-- MUSIC PLAYER -->
+<div class="music-player">
+    <audio id="portfolioMusic" src="music.m4a" loop preload="none"></audio>
+    <button id="musicBtn" type="button">▶ Musiqa</button>
+</div>
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop" title="Yuqoriga qaytish" type="button" aria-label="Yuqoriga qaytish">↑</button>
+
+    <!-- QUICK SEARCH -->
+    <div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Saytdan qidirish">
+        <div class="search-box">
+            <button id="closeSearch" class="close-search" type="button" aria-label="Yopish">✕</button>
+            <h2>Saytdan qidirish</h2>
+            <input id="siteSearch" type="search" placeholder="Bo‘lim nomini yozing...">
+            <div id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- PROJECT DETAILS MODAL -->
+    <div class="project-modal" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <button id="closeModal" type="button" aria-label="Yopish">✕</button>
+            <h2 id="modalTitle">Loyiha</h2>
+            <p id="modalDescription"></p>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION -->
+    <div id="notification" class="notification" role="status" aria-live="polite"></div>
+
+    <script>
+    
+(() => {
+    "use strict";
+
+    // ELEMENTLARNI XAVFSIZ OLISH
+    const $ = (selector) => document.querySelector(selector);
+    const $$ = (selector) => document.querySelectorAll(selector);
+    const get = (id) => document.getElementById(id);
+
+    // EMAILJS
+    const SERVICE_ID = "service_akq4q6w";
+    const TEMPLATE_ID = "template_selle8l";
+    const PUBLIC_KEY = "XHgIT820lLyKMdYG2";
+
+    if (window.emailjs) {
+        emailjs.init({ publicKey: PUBLIC_KEY });
+    }
+
+    // NOTIFICATION SYSTEM
+    let notificationTimer;
+
+    function showNotification(message) {
+        const notification = get("notification");
+
+        if (!notification) {
+            console.log(message);
+            return;
+        }
+
+        notification.textContent = message;
+        notification.classList.add("show");
+
+        clearTimeout(notificationTimer);
+
+        notificationTimer = setTimeout(() => {
+            notification.classList.remove("show");
+        }, 3000);
+    }
+
+    window.showNotification = showNotification;
+
+    // LOADING / INTRO
+    window.addEventListener("load", () => {
+        const loader = get("loader");
+
+        if (loader) {
+            loader.style.opacity = "0";
+
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 700);
+        }
+
+        document.body.classList.add("page-loaded");
+    });
+
+    // LIVE CLOCK
+    function updateClock() {
+        const clock = get("clock");
+
+        if (clock) {
+            clock.textContent = new Date().toLocaleTimeString("uz-UZ");
+        }
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // TYPING ANIMATION
+    const typingText = get("typingText");
+
+    if (typingText) {
+        const words = [
+            "Frontend Developer",
+            "Web Designer",
+            "JavaScript Developer",
+            "Python Programmer"
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        function typeEffect() {
+            const word = words[wordIndex];
+
+            charIndex += deleting ? -1 : 1;
+            typingText.textContent = word.substring(0, charIndex);
+
+            let speed = deleting ? 45 : 90;
+
+            if (!deleting && charIndex === word.length) {
+                deleting = true;
+                speed = 1300;
+            } else if (deleting && charIndex === 0) {
+                deleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                speed = 350;
+            }
+
+            setTimeout(typeEffect, speed);
+        }
+
+        typeEffect();
+    }
+
+    // SCROLL REVEAL
+const reveals = $$(
+    ".about, .skills, .stats, .projects, .project-card, .journey, .tech-stack, .testimonials, .cv-section, #skills-dashboard, #project-preview, #terminal, #github, #live-editor"
+);
+
+function revealOnScroll() {
+    reveals.forEach((item) => {
+        if (item.getBoundingClientRect().top < window.innerHeight - 80) {
+            item.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+    // ANIMATED COUNTERS
+    const counters = $$(".counter");
+    let counterStarted = false;
+
+    function startCounters() {
+        const stats = $(".stats");
+
+        if (!stats || counterStarted) return;
+
+        if (stats.getBoundingClientRect().top < window.innerHeight - 100) {
+            counterStarted = true;
+
+            counters.forEach((counter) => {
+                const target = Number(counter.dataset.target);
+
+                if (!Number.isFinite(target)) return;
+
+                let current = 0;
+                const step = Math.max(1, Math.ceil(target / 100));
+
+                const timer = setInterval(() => {
+                    current += step;
+
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+
+                    counter.textContent = current;
+                }, 20);
+            });
+        }
+    }
+
+    window.addEventListener("scroll", startCounters);
+    startCounters();
+
+    // MOBILE MENU
+    const menuBtn = get("menuBtn");
+    const navLinks = get("navLinks");
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener("click", () => {
+            const opened = navLinks.classList.toggle("show");
+            menuBtn.setAttribute("aria-expanded", String(opened));
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("show");
+                menuBtn.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+
+    // EMAIL SENDING
+    const contactForm = get("contactForm");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const message = get("formMessage");
+            const sendBtn = get("sendBtn");
+
+            if (!window.emailjs) {
+                if (message) {
+                    message.textContent = "EmailJS yuklanmadi. Internetni tekshiring.";
+                }
+                return;
+            }
+
+            if (sendBtn) {
+                sendBtn.disabled = true;
+                sendBtn.textContent = "Yuborilmoqda...";
+            }
+
+            if (message) message.textContent = "";
+
+            emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, contactForm)
+                .then(() => {
+                    if (message) {
+                        message.textContent = "Xabaringiz muvaffaqiyatli yuborildi!";
+                    }
+
+                    contactForm.reset();
+                    showNotification("Xabar yuborildi!");
+                })
+                .catch((error) => {
+                    console.error("EmailJS xatosi:", error);
+
+                    if (message) {
+                        message.textContent = "Xatolik! Qayta urinib ko‘ring.";
+                    }
+                })
+                .finally(() => {
+                    if (sendBtn) {
+                        sendBtn.disabled = false;
+                        sendBtn.textContent = "Xabar yuborish";
+                    }
+                });
+        });
+    }
+
+    // DARK / LIGHT MODE
+    const themeBtn = get("themeBtn");
+
+    function setTheme(theme) {
+        document.body.classList.toggle("light-mode", theme === "light");
+
+        if (themeBtn) {
+            themeBtn.textContent = theme === "light" ? "🌙" : "☀️";
+        }
+
+        try {
+            localStorage.setItem("theme", theme);
+        } catch (error) {
+            console.warn("Theme saqlanmadi:", error);
+        }
+    }
+
+    if (themeBtn) {
+        themeBtn.addEventListener("click", () => {
+            const isLight = document.body.classList.contains("light-mode");
+            setTheme(isLight ? "dark" : "light");
+        });
+    }
+
+    let savedTheme = "dark";
+
+    try {
+        savedTheme = localStorage.getItem("theme") || "dark";
+    } catch (error) {}
+
+    setTheme(savedTheme);
+
+    // PARTICLE BACKGROUND
+    const canvas = get("particles");
+    const ctx = canvas ? canvas.getContext("2d") : null;
+    let particles = [];
+
+    if (canvas && ctx) {
+        function resizeCanvas() {
+            const ratio = Math.min(window.devicePixelRatio || 1, 2);
+
+            canvas.width = window.innerWidth * ratio;
+            canvas.height = window.innerHeight * ratio;
+            canvas.style.width = window.innerWidth + "px";
+            canvas.style.height = window.innerHeight + "px";
+
+            ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+
+            particles = [];
+
+            const count = Math.min(65, Math.floor(window.innerWidth / 18));
+
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * window.innerWidth,
+                    y: Math.random() * window.innerHeight,
+                    dx: (Math.random() - 0.5) * 0.7,
+                    dy: (Math.random() - 0.5) * 0.7,
+                    size: Math.random() * 2 + 1
+                });
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+            particles.forEach((p, i) => {
+                p.x += p.dx;
+                p.y += p.dy;
+
+                if (p.x < 0 || p.x > window.innerWidth) p.dx *= -1;
+                if (p.y < 0 || p.y > window.innerHeight) p.dy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = "#00d9ff";
+                ctx.fill();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const other = particles[j];
+                    const dx = p.x - other.x;
+                    const dy = p.y - other.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(other.x, other.y);
+                        ctx.strokeStyle = "rgba(0,217,255," + (1 - distance / 120) + ")";
+                        ctx.lineWidth = 0.6;
+                        ctx.stroke();
+                    }
+                }
+            });
+
+            requestAnimationFrame(animateParticles);
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+        animateParticles();
+    }
+
+    // BACK TO TOP
+    const backToTop = get("backToTop");
+
+    if (backToTop) {
+        window.addEventListener("scroll", () => {
+            backToTop.classList.toggle("visible", window.scrollY > 300);
+        });
+
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    // NEON CURSOR
+    const neonCursor = get("neonCursor");
+
+    if (neonCursor && window.matchMedia("(pointer: fine)").matches) {
+        document.addEventListener("mousemove", (event) => {
+            neonCursor.style.left = event.clientX + "px";
+            neonCursor.style.top = event.clientY + "px";
+        });
+    }
+
+    // SCROLL PROGRESS
+    function updateScrollProgress() {
+        const progressBar = get("scrollProgress");
+
+        if (!progressBar) return;
+
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = totalHeight > 0
+            ? (window.scrollY / totalHeight) * 100
+            : 0;
+
+        progressBar.style.width = progress + "%";
+    }
+
+    window.addEventListener("scroll", updateScrollProgress);
+    updateScrollProgress();
+
+    // PROJECT FILTER
+    const filterButtons = $$(".filter-btn");
+    const projectCards = $$(".project-card");
+
+    filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            filterButtons.forEach((btn) => btn.classList.remove("active"));
+            button.classList.add("active");
+
+            const filter = button.dataset.filter;
+
+            projectCards.forEach((card) => {
+                const categories = (card.dataset.category || "").split(" ");
+                const show = filter === "all" || categories.includes(filter);
+
+                card.classList.toggle("hidden", !show);
+            });
+        });
+    });
+
+    // PROJECT DETAILS MODAL
+    const projectModal = get("projectModal");
+
+    projectCards.forEach((card) => {
+        const detailsBtn = card.querySelector(".details-btn");
+
+        if (!detailsBtn) return;
+
+        detailsBtn.addEventListener("click", () => {
+            const title = card.querySelector(".project-content h3");
+            const description = card.querySelector(".project-content p");
+
+            if (get("modalTitle") && title) {
+                get("modalTitle").textContent = title.textContent;
+            }
+
+            if (get("modalDescription") && description) {
+                get("modalDescription").textContent = description.textContent;
+            }
+
+            if (projectModal) projectModal.classList.add("open");
+        });
+    });
+
+    function closeProjectModal() {
+        if (projectModal) projectModal.classList.remove("open");
+    }
+
+    const closeModalBtn = get("closeModal");
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener("click", closeProjectModal);
+    }
+
+    if (projectModal) {
+        projectModal.addEventListener("click", (event) => {
+            if (event.target === projectModal) closeProjectModal();
+        });
+    }
+
+    // LIVE DEMO
+    $$(".demo-btn").forEach((button) => {
+        button.addEventListener("click", () => {
+            const demoUrl = (button.dataset.demo || "").trim();
+
+            if (demoUrl) {
+                try {
+                    const url = new URL(demoUrl);
+
+                    if (url.protocol === "https:" || url.protocol === "http:") {
+                        window.open(url.href, "_blank", "noopener,noreferrer");
+                    } else {
+                        showNotification("Havola noto‘g‘ri.");
+                    }
+                } catch (error) {
+                    showNotification("Demo havolasi noto‘g‘ri.");
+                }
+            } else {
+                showNotification("Bu loyiha uchun Demo havolasi qo‘shilmagan.");
+            }
+        });
+    });
+
+    // LANGUAGE SWITCHER
+    let currentLanguage = "uz";
+    const languageBtn = get("languageBtn");
+
+    if (languageBtn) {
+        languageBtn.addEventListener("click", function() {
+            currentLanguage = currentLanguage === "uz" ? "en" : "uz";
+
+            $$("#navLinks a").forEach((link) => {
+                if (link.dataset[currentLanguage]) {
+                    link.textContent = link.dataset[currentLanguage];
+                }
+            });
+
+            this.textContent = currentLanguage.toUpperCase();
+
+            showNotification(
+                currentLanguage === "en"
+                    ? "English selected"
+                    : "O‘zbek tili tanlandi"
+            );
+        });
+    }
+
+    // MUSIC PLAYER
+    const music = get("portfolioMusic");
+    const musicBtn = get("musicBtn");
+
+    if (music && musicBtn) {
+        musicBtn.addEventListener("click", async () => {
+            if (music.paused) {
+                try {
+                    await music.play();
+                    musicBtn.textContent = "⏸ Musiqani to‘xtatish";
+                } catch (error) {
+                    console.error(error);
+                    showNotification("music.m4a faylini Portfolio papkasiga joylang.");
+                }
+            } else {
+                music.pause();
+                musicBtn.textContent = "▶ Musiqa";
+            }
+        });
+    }
+
+    // VISITOR COUNTER
+    const visitorCount = get("visitorCount");
+
+    if (visitorCount) {
+        try {
+            let visits = Number(localStorage.getItem("portfolioVisits") || 0);
+            visits++;
+
+            localStorage.setItem("portfolioVisits", visits);
+            visitorCount.textContent = visits;
+        } catch (error) {
+            visitorCount.textContent = "—";
+        }
+    }
+
+    // QUICK SEARCH
+    const searchOverlay = get("searchOverlay");
+    const searchInput = get("siteSearch");
+    const searchResults = get("searchResults");
+
+    const searchBtn = get("searchBtn");
+    const closeSearch = get("closeSearch");
+
+    if (searchBtn && searchOverlay && searchInput) {
+        searchBtn.addEventListener("click", () => {
+            searchOverlay.classList.add("open");
+            searchInput.focus();
+        });
+    }
+
+    if (closeSearch && searchOverlay) {
+        closeSearch.addEventListener("click", () => {
+            searchOverlay.classList.remove("open");
+        });
+    }
+
+    if (searchOverlay) {
+        searchOverlay.addEventListener("click", (event) => {
+            if (event.target === searchOverlay) {
+                searchOverlay.classList.remove("open");
+            }
+        });
+    }
+
+    const searchableSections = [
+        { name: "Bosh sahifa", id: "home" },
+        { name: "Men haqimda", id: "about" },
+        { name: "Ko‘nikmalar", id: "skills" },
+        { name: "Natijalarim", id: "stats" },
+        { name: "Loyihalar", id: "projects" },
+        { name: "Mening yo‘lim", id: "journey" },
+        { name: "Texnologiyalar", id: "projects" },
+        { name: "Aloqa", id: "contact" }
+    ];
+
+    if (searchInput && searchResults) {
+        searchInput.addEventListener("input", function() {
+            const query = this.value.toLocaleLowerCase("uz").trim();
+            searchResults.replaceChildren();
+
+            if (!query) return;
+
+            const matches = searchableSections.filter((section) =>
+                section.name.toLocaleLowerCase("uz").includes(query)
+            );
+
+            matches.forEach((section) => {
+                const link = document.createElement("a");
+
+                link.href = "#" + section.id;
+                link.textContent = section.name;
+
+                link.addEventListener("click", () => {
+                    if (searchOverlay) searchOverlay.classList.remove("open");
+                    searchInput.value = "";
+                    searchResults.replaceChildren();
+                });
+
+                searchResults.appendChild(link);
+            });
+
+            if (matches.length === 0) {
+                searchResults.textContent = "Hech narsa topilmadi.";
+            }
+        });
+    }
+
+    // CHATBOT
+const chatButton = get("chatButton");
+const chatWindow = get("chatWindow");
+const chatInput = get("chatInput");
+const chatMessages = get("chatMessages");
+
+if (chatButton && chatWindow) {
+    chatButton.addEventListener("click", () => {
+        chatWindow.classList.toggle("active");
+    });
+}
+
+function sendMessage() {
+    if (!chatInput || !chatMessages) return;
+
+    const text = chatInput.value.trim();
+    if (!text) return;
+
+    const userMessage = document.createElement("p");
+    userMessage.textContent = "Siz: " + text;
+    chatMessages.appendChild(userMessage);
+
+    const lowerText = text.toLowerCase();
+    let answer = "Bu savolga hozircha javobim yo‘q. Aloqa bo‘limiga yozishingiz mumkin.";
+
+    if (lowerText.includes("salom")) {
+        answer = "Salom! Portfolio saytimizga xush kelibsiz! 😊";
+    } else if (lowerText.includes("ism")) {
+        answer = "Mening ismim Muhammadyusuf.";
+    } else if (lowerText.includes("skill") || lowerText.includes("ko‘nikma")) {
+        answer = "Men HTML, CSS, JavaScript va Python o‘rganyapman.";
+    } else if (lowerText.includes("github")) {
+        answer = "GitHub: github.com/muhammadbirov020-eng";
+    } else if (lowerText.includes("aloqa")) {
+        answer = "Menga Contact bo‘limi orqali xabar yuborishingiz mumkin.";
+    } else if (lowerText.includes("loyiha")) {
+        answer = "Loyihalarimni Projects bo‘limidan ko‘rishingiz mumkin.";
+    } else if (lowerText.includes("rahmat")) {
+        answer = "Arzimaydi! Sizga yordam berishdan xursandman.";
+    }
+
+    const botMessage = document.createElement("p");
+    botMessage.textContent = "Bot: " + answer;
+    chatMessages.appendChild(botMessage);
+
+    chatInput.value = "";
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+window.sendMessage = sendMessage;
+
+if (chatInput) {
+    chatInput.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+    });
+}
+
+    // HACKER TERMINAL
+    const terminalInput = get("terminalInput");
+    const terminalOutput = get("terminalOutput");
+
+    if (terminalInput && terminalOutput) {
+        terminalInput.addEventListener("keydown", (event) => {
+            if (event.key !== "Enter") return;
+
+            const command = terminalInput.value.trim().toLowerCase();
+            if (!command) return;
+
+            const results = {
+                help: "Commands: about, skills, projects, github, clear",
+                about: "I am Muhammadyusuf.",
+                skills: "HTML, CSS, JavaScript, Python",
+                projects: "Check my Projects section!",
+                github: "github.com/muhammadbirov020-eng"
+            };
+
+            if (command === "clear") {
+                terminalOutput.replaceChildren();
+                terminalInput.value = "";
+                return;
+            }
+
+            const commandLine = document.createElement("p");
+            commandLine.textContent = "> " + command;
+
+            const resultLine = document.createElement("p");
+            resultLine.textContent = results[command] || "Command not found! Type help.";
+
+            terminalOutput.append(commandLine, resultLine);
+            terminalInput.value = "";
+            terminalOutput.scrollTop = terminalOutput.scrollHeight;
+        });
+    }
+
+    // 3D INTERACTIVE BACKGROUND
+    document.addEventListener("mousemove", (event) => {
+        const x = (event.clientX / window.innerWidth - 0.5) * 40;
+        const y = (event.clientY / window.innerHeight - 0.5) * 40;
+
+        $$(".glow").forEach((item, index) => {
+            item.style.transform =
+                `translate(${x * (index + 1) / 2}px, ${y * (index + 1) / 2}px)`;
+        });
+    });
+
+    
+    // 3D HERO EFFECT
+const heroCard = get("heroCard") || $(".profile-img");
+
+if (heroCard && window.matchMedia("(pointer: fine)").matches) {
+    heroCard.addEventListener("mousemove", (event) => {
+        const rect = heroCard.getBoundingClientRect();
+
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+        heroCard.style.transform =
+            `perspective(1000px) rotateY(${x * 15}deg) rotateX(${-y * 15}deg) scale(1.04)`;
+    });
+
+    heroCard.addEventListener("mouseleave", () => {
+        heroCard.style.transform =
+            "perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1)";
+    });
+}
+
+    // PROJECT PREVIEW
+    window.openProjectPreview = function(url) {
+        const frame = get("previewFrame");
+        const modal = get("previewModal");
+
+        if (!frame || !modal) return;
+
+        try {
+            const safeUrl = new URL(url, window.location.href);
+
+            if (!["https:", "http:"].includes(safeUrl.protocol)) {
+                showNotification("Noto‘g‘ri loyiha havolasi.");
+                return;
+            }
+
+            frame.src = safeUrl.href;
+            modal.classList.add("active");
+        } catch (error) {
+            showNotification("Havola noto‘g‘ri.");
+        }
+    };
+
+    window.closeProjectPreview = function() {
+        const frame = get("previewFrame");
+        const modal = get("previewModal");
+
+        if (modal) modal.classList.remove("active");
+        if (frame) frame.src = "about:blank";
+    };
+
+    // LIVE CODE EDITOR
+    const runCode = get("runCode");
+    const codeInput = get("codeInput");
+    const codePreview = get("codePreview");
+
+    if (runCode && codeInput && codePreview) {
+        runCode.addEventListener("click", () => {
+            codePreview.srcdoc = codeInput.value;
+            showNotification("Kod ishga tushirildi!");
+        });
+    }
+
+    // SMOOTH SECTION NAVIGATION
+    $$('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+            const targetId = link.getAttribute("href");
+            if (!targetId || targetId === "#") return;
+
+            const target = $(targetId);
+
+            if (target) {
+                event.preventDefault();
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            }
+        });
+    });
+
+    // PAGE TRANSITION
+    document.body.classList.add("page-ready");
+
+    // ESC CLOSES WINDOWS
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            if (searchOverlay) searchOverlay.classList.remove("open");
+            closeProjectModal();
+            window.closeProjectPreview();
+        }
+    });
+
+    console.log("Muhammadyusuf Portfolio JavaScript ishga tushdi!");
+})();
+
+  </script>
+<div class="chatbot">
+    <button id="chatButton">💬</button>
+
+    <div class="chat-window" id="chatWindow">
+        <h3>AI Assistant 🤖</h3>
+        <div id="chatMessages">
+            <p>Salom! Sizga qanday yordam beraman?</p>
+        </div>
+
+        <input type="text" id="chatInput" placeholder="Xabar yozing...">
+        <button onclick="sendMessage()">Yuborish</button>
+    </div>
+</div>
+</body>
+</html>
