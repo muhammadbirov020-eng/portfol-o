@@ -989,64 +989,107 @@ revealOnScroll();
         });
     }
 
-    // CHATBOT
-const chatButton = get("chatButton");
-const chatWindow = get("chatWindow");
-const chatInput = get("chatInput");
-const chatMessages = get("chatMessages");
+   
+// REAL AI CHATBOT
+document.addEventListener("DOMContentLoaded", () => {
+    const chatButton = document.getElementById("chatButton");
+    const chatWindow = document.getElementById("chatWindow");
+    const chatClose = document.getElementById("chatClose");
+    const chatInput = document.getElementById("chatInput");
+    const chatSend = document.getElementById("chatSend");
+    const chatMessages = document.getElementById("chatMessages");
+    const chatTyping = document.getElementById("chatTyping");
 
-if (chatButton && chatWindow) {
-    chatButton.addEventListener("click", () => {
-        chatWindow.classList.toggle("active");
-    });
-}
+    const AI_API_URL =
+        "https://muhammadyusuf-ai.muhammadbirov020.workers.dev";
 
-function sendMessage() {
-    if (!chatInput || !chatMessages) return;
+    let chatHistory = [];
 
-    const text = chatInput.value.trim();
-    if (!text) return;
-
-    const userMessage = document.createElement("p");
-    userMessage.textContent = "Siz: " + text;
-    chatMessages.appendChild(userMessage);
-
-    const lowerText = text.toLowerCase();
-    let answer = "Bu savolga hozircha javobim yo‘q. Aloqa bo‘limiga yozishingiz mumkin.";
-
-    if (lowerText.includes("salom")) {
-        answer = "Salom! Portfolio saytimizga xush kelibsiz! 😊";
-    } else if (lowerText.includes("ism")) {
-        answer = "Mening ismim Muhammadyusuf.";
-    } else if (lowerText.includes("skill") || lowerText.includes("ko‘nikma")) {
-        answer = "Men HTML, CSS, JavaScript va Python o‘rganyapman.";
-    } else if (lowerText.includes("github")) {
-        answer = "GitHub: github.com/muhammadbirov020-eng";
-    } else if (lowerText.includes("aloqa")) {
-        answer = "Menga Contact bo‘limi orqali xabar yuborishingiz mumkin.";
-    } else if (lowerText.includes("loyiha")) {
-        answer = "Loyihalarimni Projects bo‘limidan ko‘rishingiz mumkin.";
-    } else if (lowerText.includes("rahmat")) {
-        answer = "Arzimaydi! Sizga yordam berishdan xursandman.";
+    function addMessage(text, type) {
+        const message = document.createElement("div");
+        message.className = "ai-message " +
+            (type === "user" ? "user-message" : "bot-message");
+        message.textContent = text;
+        chatMessages.appendChild(message);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    const botMessage = document.createElement("p");
-    botMessage.textContent = "Bot: " + answer;
-    chatMessages.appendChild(botMessage);
+    chatButton.addEventListener("click", () => {
+        chatWindow.classList.toggle("active");
+        chatInput.focus();
+    });
 
-    chatInput.value = "";
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
+    chatClose.addEventListener("click", () => {
+        chatWindow.classList.remove("active");
+    });
 
-window.sendMessage = sendMessage;
+    async function sendAIMessage() {
+        const message = chatInput.value.trim();
 
-if (chatInput) {
+        if (!message || chatSend.disabled) return;
+
+        addMessage(message, "user");
+        chatHistory.push({
+            role: "user",
+            content: message
+        });
+
+        chatInput.value = "";
+        chatSend.disabled = true;
+        chatTyping.hidden = false;
+
+        try {
+            const response = await fetch(AI_API_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    messages: chatHistory.slice(-10)
+                })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || "Server xatosi");
+            }
+
+            const answer = data.reply || "Javob olinmadi.";
+
+            addMessage(answer, "bot");
+
+            chatHistory.push({
+                role: "assistant",
+                content: answer
+            });
+
+        } catch (error) {
+            console.error("AI Chatbot:", error);
+
+            addMessage(
+                "AI bilan bog‘lanishda xatolik yuz berdi. Keyinroq urinib ko‘ring.",
+                "bot"
+            );
+
+            chatHistory.pop();
+
+        } finally {
+            chatTyping.hidden = true;
+            chatSend.disabled = false;
+            chatInput.focus();
+        }
+    }
+
+    chatSend.addEventListener("click", sendAIMessage);
+
     chatInput.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
-            sendMessage();
+            sendAIMessage();
         }
     });
-}
+});
+
 
     // HACKER TERMINAL
     const terminalInput = get("terminalInput");
