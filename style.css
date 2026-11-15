@@ -1551,3 +1551,14 @@ body.light-mode #musicBtn {
         width: calc(100vw - 20px);
     }
 }
+/* CONTACT SECTION FIX */
+#contact {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative;
+    z-index: 5;
+    min-height: 300px;
+    padding: 80px 20px;
+    margin: 40px auto;
+}
