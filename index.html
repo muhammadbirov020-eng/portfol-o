@@ -505,10 +505,7 @@ body {
     }
 
     // SCROLL REVEAL
-const reveals = $$(
-    ".about, .skills, .stats, .projects, .project-card, .journey, .tech-stack, .testimonials, .cv-section, #skills-dashboard, #project-preview, #terminal, #github, #live-editor"
-);
-
+const reveals = $$(".reveal");
 function revealOnScroll() {
     reveals.forEach((item) => {
         if (item.getBoundingClientRect().top < window.innerHeight - 80) {
